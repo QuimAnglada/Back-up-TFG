@@ -12,4 +12,5 @@ void loop() {
   delay(1000); // Perquè hi ha intermitència, l'argument és el temps, expressat en ms, que la llum està apagada.  
   digitalWrite(3, LOW); // apagar un pin digital (LOW).
   delay(1000); 
+  // és IR :(
 }
