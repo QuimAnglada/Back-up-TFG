@@ -12,5 +12,6 @@ void loop() {
   delay(1000); // Perquè hi ha intermitència, l'argument és el temps, expressat en ms, en que el relé i la seva llum està apagades.  
   digitalWrite(3, LOW); // apagar un pin digital (LOW).
   delay(1000); 
-  // El botó inferior atura la seqüència, el botó superior activa el bluetooth ?
+  // El botó inferior atura la seqüència, però en el cas de la conexió bluetooth l'activa.
+  // El botó superior???
 }

@@ -37,16 +37,16 @@ void loop() {
     SerialBT.write(Serial.read());
   }
 
-// S'hi ha bytes per llegir en el mòbil, aquest són escrits en el monitor. 
+// S'hi ha bytes per llegir en el mòbil, aquest són escrits en el monitor. (Comandament dels relés)
   if (SerialBT.available()) {
-    char incomingChar = SerialBT.read();
+    char incomingChar = SerialBT.read();  // S'hi ha informació per llegir es guarda a incomingChar
     if (incomingChar != '\n'){            // != diferent
-      message += String(incomingChar);    // += concatenar (no entenc perquè concatenem)
+      message += String(incomingChar);    // += concatenar (no entenc perquè concatenem) venen els caràcters 1 a 1?
     }
     else{
       message = "";
     }
-    Serial.write(SerialBT.read());
+    Serial.write(incomingChar); // es pot passar com argument message?
   }
 
 // Check received message and control output accordingly
