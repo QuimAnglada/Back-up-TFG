@@ -1,4 +1,4 @@
-// Llibreries necessaries
+/// Llibreries necessaries
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEServer.h>                                                      // necessari pel servidor, per arrancar un servidor necessitem un servei i una característica amb els seus propis UUIDs
