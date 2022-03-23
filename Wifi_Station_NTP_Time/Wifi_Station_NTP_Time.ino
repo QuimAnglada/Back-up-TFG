@@ -1,5 +1,5 @@
-// Station 
-// Conexió al router de casa
+// Station -> Conexió al router de casa
+// NTP time -> mitjantçant la conexió wifi s'obté el temps real de qualsevol zona del món
 
 #include <WiFi.h>
 #include "time.h"
