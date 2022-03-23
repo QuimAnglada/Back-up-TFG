@@ -11,9 +11,9 @@ const char* password = "5a303030324346433132393633";
 // Direcció del servidor NTP que farem servir
 const char* ntpServer = "europe.pool.ntp.org";
 // Ajustem la nostra zona horàri, UTC+1.00 es correspon amb 3600 ms 
-const long  gmtOffset_sec = 0;
+const long  gmtOffset_sec = 3600;
 // Ajustem si compensem l'horari, és a dir, avancem i endarrerim el rellotge dos cops l'any. 3600 si ho fem, 0 si no.
-const int   daylightOffset_sec = 3600;
+const int   daylightOffset_sec = 0;
 
 void setup() {
   Serial.begin(115200);
