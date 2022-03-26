@@ -1,7 +1,7 @@
 /*!
- * @file readData.ino
- * @brief Read the concentration of carbon dioxide and TVOC
- * @n Experiment phenomenon: read data every 0.5s, and print it out on serial port. 
+ * @file getBaseLine.ino
+ * @brief Put the module in clear air and work a few minutes, wait for baseline doing not change 
+ * @n Experiment phenomenon: get
  *
  * @copyright    Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
@@ -12,6 +12,7 @@
  * @url https://github.com/DFRobot/DFRobot_CCS811
  */
 #include "DFRobot_CCS811.h"
+
 
 /*
  * IIC address default 0x5A, the address becomes 0x5B if the ADDR_SEL is soldered.
@@ -30,21 +31,15 @@ void setup(void)
 }
 void loop() {
     if(CCS811.checkDataReady() == true){
-        Serial.print("CO2: ");
-        Serial.print(CCS811.getCO2PPM());
-        Serial.print("ppm, TVOC: ");
-        Serial.print(CCS811.getTVOCPPB());
-        Serial.println("ppb");
+        /*!
+         * @brief Set baseline
+         * @return baseline in clear air
+         */
+        Serial.println(CCS811.readBaseLine(), HEX);
 
     } else {
         Serial.println("Data is not ready!");
     }
-    /*!
-     * @brief Set baseline
-     * @param get from getBaseline.ino
-     */
-    //CCS811.writeBaseLine(0x447B); Baseline per defecte
-    CCS811.writeBaseLine(0xA46A); //calculada ""
     //delay cannot be less than measurement cycle
     delay(1000);
 }
