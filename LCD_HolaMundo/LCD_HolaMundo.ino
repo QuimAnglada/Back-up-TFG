@@ -31,14 +31,14 @@ void loop() {
   // On situem el text dins de la pantalla, (x,-y)
   tft.setCursor(0,0);
   // Text
-  /*tft.print("Hola, han passat: ");
+  tft.print("Hola, han passat: ");
   tft.setCursor(75,250);
   tft.print("segons");
   tft.setTextColor(ILI9341_WHITE,ILI9341_BLACK);
   tft.setTextSize(8);
   tft.setCursor(30,100);
   tft.print(millis()/1000);
-  delay(10);*/
+  delay(10);
 }
 
 // Tot el que sigui permanent ho deixem al set up mentre que les dades dinàmiques estarant ubicades al loop.
